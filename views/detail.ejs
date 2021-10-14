@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Movies Detail
+    </title>
+</head>
+
+<style>
+    .background {
+        background: #4f4f4f;
+        color: silver;
+    }
+
+    .movies {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .title {
+        width: calc(25% - 20px);
+        padding: 10px;
+    }
+
+    .image {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .pagination {
+        font-size: 24px;
+        text-align: center;
+        color: silver;
+    }
+</style>
+
+<body class="background">
+
+
+    <div class="movies">
+        <% movieDetail.forEach(detail=> { %>
+            <div class="title">
+                <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
+                <h2>
+                    <%= detail.title %>
+                </h2>
+            </div>
+            <p>
+                <%=detail.vote_average %>
+            </p>
+
+            <section id="movieID">
+                <div>
+                    <span>
+                        <%=detail.release_date %>
+                    </span>
+                    <span>
+                        <%=detail.status %>
+                    </span>
+                </div>
+
+                <p>
+                    <%=detail.overview %>
+                </p>
+            </section>
+    </div>
+    <% }) %>
+
+        <!--     
+    <ul>
+        <% articles.forEach(element=> { %>
+            <li>
+                <%= element.title %>
+            </li>
+            <% }) %>
+    </ul> -->
+
+
+</body>
+
+</html>

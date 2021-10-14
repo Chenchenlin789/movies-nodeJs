@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        movies
+    </title>
+</head>
+
+<style>
+    .background {
+        background: #4F4F4F;
+        color: #e5e5e5;
+    }
+
+    .movies {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+
+
+    }
+
+    .title {
+        width: calc(25% - 20px);
+        padding: 10px;
+    }
+
+    .image {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .pagination {
+        font-size: 24px;
+        text-align: center;
+        color: silver;
+    }
+</style>
+
+<body class="background">
+    <h1 class="pagination">Discover Movies</h1>
+
+    <div class="movies">
+        <% movieList.forEach(movie=> { %>
+            <div class="title">
+                <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
+                <h3>
+                    <%= movie.title %>
+                </h3>
+            </div>
+            <% }) %>
+    </div>
+
+    <div class="pagination">
+        <% pagination.forEach(page=> { %>
+            <% if (page===currentPage) { %>
+                <span>
+                    <%= currentPage %>
+                </span>
+                <% } else { %>
+                    <a href=<%=`/all/${page}`%>> <%= page %></a>
+                    <% } %>
+                        <% }) %>
+
+    </div>
+
+
+</body>
+
+</html>
