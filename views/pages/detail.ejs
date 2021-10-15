@@ -43,14 +43,29 @@
 </style>
 
 <body class="background">
+    <%= movie.id %>
 
+        <!-- <h1 class="pagination"><a href="/">Movie Magic</a></h1>
+    <section>
+        <img class="image" src=<%=`https://image.tmdb.org/t/p/original${movie.backdrop_path}` %> alt="">
+    </section>
 
-    <div class="movies">
-        <% movieDetail.forEach(detail=> { %>
+    <h2>
+        <%= movie.title%>
+    </h2>
+    <p>
+        <%=detail.vote_average %>
+    </p>
+    <p>
+        <%= movie.overview%>
+    </p> -->
+
+        <!-- <div class="movies">
+        <% movie.forEach(detail=> { %>
             <div class="title">
-                <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
+                <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.backdrop_path %>">
                 <h2>
-                    <%= detail.title %>
+                    <%= detail.original_title %>
                 </h2>
             </div>
             <p>
@@ -72,7 +87,7 @@
                 </p>
             </section>
     </div>
-    <% }) %>
+    <% }) %> -->
 
         <!--     
     <ul>

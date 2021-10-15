@@ -43,15 +43,17 @@
 </style>
 
 <body class="background">
-    <h1 class="pagination">Discover Movies</h1>
+    <h1 class="pagination"><a href="/">Movie Magic</a></h1>
 
     <div class="movies">
         <% movieList.forEach(movie=> { %>
             <div class="title">
-                <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
-                <h3>
-                    <%= movie.title %>
-                </h3>
+                <a href=<%=`/details/${movie.id}`%> >
+                    <img class="image" src="https://image.tmdb.org/t/p/w342<%= movie.poster_path %>">
+                    <h3>
+                        <%= movie.title %>
+                    </h3>
+                </a>
             </div>
             <% }) %>
     </div>
